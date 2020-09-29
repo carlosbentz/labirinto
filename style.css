@@ -1,0 +1,62 @@
+/*#geralt {
+    width   : 10vh;
+    height  : 10vh;
+    position: absolute;
+
+    left   : 200px;
+    top    : 200px;
+    content: url(./geralt.png);
+
+}
+
+img {
+    width : 10vh;
+    height: 10vh;
+}
+
+#muro {
+    width  : 10vh;
+    height : 10vh;
+    content: url(./stone-wall-texture_1110-425.jpg);
+}
+
+#chão {
+    width  : 10vh;
+    height : 10vh;
+    content: url(./grass-texture-4k-green-grass-green-background.jpg);
+}*/
+
+.linha {
+    height : 6.66vh;
+    display: flex;
+}
+
+.wall {
+    width           : 4.76vw;
+    background-image: url("./images/stone-wall-texture_1110-425.jpg");
+    background-size : 100%;
+}
+
+.grass {
+    width           : 4.76vw;
+    background-image: url("./images/grass-texture-4k-green-grass-green-background.jpg");
+    background-size : 100%;
+}
+
+.portal {
+    width           : 4.76vw;
+    background-size : 100%;
+    background-image: url("./images/portal2.jpg");
+}
+
+
+
+
+
+#jogador {
+    height          : 6.66vh;
+    width           : 4.76vw;
+    background-image: url(./images/geralt.png);
+    background-size : 100%;
+    position        : absolute;
+}
