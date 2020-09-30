@@ -23,7 +23,6 @@ jogador.setAttribute("id", "jogador")
 
 document.getElementById("music").volume = 0.5
 
-
 for (i = 0; i < 15; i++) {
     let linha = document.createElement("div")
     linha.setAttribute("id", "linha" + [i])
@@ -65,7 +64,6 @@ document.addEventListener('keydown', (event) => {
         }
     }
 
-
     if (keyName === "ArrowUp") {
         if (jogadorPosicaoY > 0 && jogadorPosicaoY <= 14) {
             let checharProxPosicao = document.getElementById("linha" + (jogadorPosicaoY - 1) + "cell" + jogadorPosicaoX)
@@ -100,7 +98,6 @@ document.addEventListener('keydown', (event) => {
     }
 
     if (keyName === "ArrowRight") {
-        console.log(jogadorPosicaoY)
         if (jogadorPosicaoX >= 0 && jogadorPosicaoY < 20) {
             let checharProxPosicao = document.getElementById("linha" + jogadorPosicaoY + "cell" + (jogadorPosicaoX + 1))
             if (checharProxPosicao.className === "grass" || checharProxPosicao.className === "portal") {
@@ -119,8 +116,14 @@ document.addEventListener('keydown', (event) => {
 function checkWin() {
     if (jogadorPosicaoY === 8 && jogadorPosicaoX === 20) {
         console.log("Parabéns, você chegou ao portal.")
+        document.getElementById("video").style = "display: inline-block;"
+        document.getElementById("video").play()
         togglePopup()
         resetGame()
+        document.getElementById("video").addEventListener('ended', myHandler, false);
+        function myHandler(e) {
+            document.getElementById("video").style = "display: none;"
+        }
     }
 }
 
