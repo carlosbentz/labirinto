@@ -10,10 +10,18 @@
 </head>
 
 <body>
-    <!--<div id="geralt"></div>
-    <div id="muro"></div>
-    <div id="chão"></div>-->
+    <audio src="sounds/thewitcher3music.mp3" autoplay loop preload="auto" id="music" volume="20"></audio>
     <script src="./script.js"></script>
+    <div class="popup1" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup()">Jogar Novamente</div>
+            <h1>
+                Parabéns, você conseguiu atravessar o portal.
+            </h1>
+
+        </div>
+    </div>
 </body>
 
 </html>

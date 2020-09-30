@@ -21,6 +21,9 @@ let jogadorPosicaoX = 1
 let jogador = document.createElement("div")
 jogador.setAttribute("id", "jogador")
 
+document.getElementById("music").volume = 0.5
+
+
 for (i = 0; i < 15; i++) {
     let linha = document.createElement("div")
     linha.setAttribute("id", "linha" + [i])
@@ -41,9 +44,9 @@ for (i = 0; i < 15; i++) {
         }
         linha.appendChild(cell)
     }
-} +
+}
 
-    document.getElementById("linha9cell1").appendChild(jogador)
+document.getElementById("linha9cell1").appendChild(jogador)
 
 document.addEventListener('keydown', (event) => {
     const keyName = event.key
@@ -116,5 +119,18 @@ document.addEventListener('keydown', (event) => {
 function checkWin() {
     if (jogadorPosicaoY === 8 && jogadorPosicaoX === 20) {
         console.log("Parabéns, você chegou ao portal.")
+        togglePopup()
+        resetGame()
     }
+}
+
+function togglePopup() {
+    document.getElementById("music").muted = !document.getElementById("music").muted
+    document.getElementById("popup-1").classList.toggle("active");
+}
+
+function resetGame() {
+    jogadorPosicaoY = 9
+    jogadorPosicaoX = 1
+    document.getElementById("linha9cell1").appendChild(jogador)
 }

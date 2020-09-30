@@ -1,30 +1,7 @@
-/*#geralt {
-    width   : 10vh;
-    height  : 10vh;
-    position: absolute;
-
-    left   : 200px;
-    top    : 200px;
-    content: url(./geralt.png);
-
+body {
+    background-image: url("./images/grass.jpg");
+    background-size : contain;
 }
-
-img {
-    width : 10vh;
-    height: 10vh;
-}
-
-#muro {
-    width  : 10vh;
-    height : 10vh;
-    content: url(./stone-wall-texture_1110-425.jpg);
-}
-
-#chão {
-    width  : 10vh;
-    height : 10vh;
-    content: url(./grass-texture-4k-green-grass-green-background.jpg);
-}*/
 
 .linha {
     height : 6.66vh;
@@ -38,15 +15,13 @@ img {
 }
 
 .grass {
-    width           : 4.76vw;
-    background-image: url("./images/grass-texture-4k-green-grass-green-background.jpg");
-    background-size : 100%;
+    width: 4.76vw;
 }
 
 .portal {
     width           : 4.76vw;
     background-size : 100%;
-    background-image: url("./images/portal2.jpg");
+    background-image: url("./images/portal.jpg");
 }
 
 
@@ -59,4 +34,58 @@ img {
     background-image: url(./images/geralt.png);
     background-size : 100%;
     position        : absolute;
+}
+
+
+
+.popup1 .overlay {
+    position  : fixed;
+    top       : 0px;
+    left      : 0px;
+    width     : 100vw;
+    height    : 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    z-index   : 1;
+    display   : none;
+}
+
+.popup1 .content {
+    font-family     : 'MedievalSharp', cursive;
+    position        : absolute;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, -50%) scale(0);
+    background-image: url(./images/buttonbackground.jpg);
+    background-size : cover;
+    width           : 70%;
+    height          : 90%;
+    z-index         : 2;
+    text-align      : center;
+    padding         : 20px;
+    box-sizing      : border-box;
+    font-family     : "Open Sans", sans-serif;
+}
+
+.popup1 .close-btn {
+    display    : inline-block;
+    cursor     : pointer;
+    position   : absolute;
+    right      : 40%;
+    top        : 90%;
+    padding    : 10px;
+    background : transparent;
+    color      : #fff;
+    font-size  : 25px;
+    font-weight: 600;
+    text-align : center;
+    border     : 1px solid lightgray;
+}
+
+.popup1.active .overlay {
+    display: block;
+}
+
+.popup1.active .content {
+    transition: all 300ms ease-in-out;
+    transform : translate(-50%, -50%) scale(1);
 }
